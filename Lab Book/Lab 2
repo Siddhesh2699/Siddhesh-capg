@@ -1,0 +1,133 @@
+1.)
+package p1;
+import java.util.Arrays;
+import java.util.Scanner;
+public class  SecondSmallest{
+public int getSecondSmallest(int[] arr)
+{
+Arrays.sort(arr);
+return arr[1];
+}
+public static void main(String[] args) {
+SecondSmallest obj=new SecondSmallest();
+Scanner sc=new Scanner(System.in);
+System.out.println("Enter size of array");
+int n=sc.nextInt();
+System.out.println("enter array elements");
+int[] arr=new int[n];
+
+for(int i=0;i<n;i++)
+{
+arr[i]=sc.nextInt();
+}
+int key=obj.getSecondSmallest(arr);
+System.out.println("the answer is "+key);
+}
+}
+
+
+3.)
+package p1;
+
+import java.util.Arrays;
+import java.util.Scanner;
+public class ArraySort {
+ private int arr[];
+public int[] getArr() {
+return arr;
+}
+public int[] setArr(int[] arr) {
+this.arr = arr;
+return arr;
+}
+public int[] GetSorted(int arr[])
+{
+for(int j=0;j<arr.length;j++)
+{
+int i,r=0;
+while(arr[j]!=0) {
+int digit = arr[j]%10;
+  r=r*10+digit;
+  arr[j]=arr[j]/10;
+}
+arr[j]=r;
+}
+Arrays.sort(arr);
+return arr;
+}
+ public void display()
+ {
+System.out.println("Sorted array with reverse numbers is: ");
+for(int x:arr) {
+System.out.println(x);
+}
+ }
+  public static void main(String[] args) {
+int n;
+ArraySort obj = new ArraySort();
+Scanner sc = new Scanner(System.in);
+   System.out.println("Enter the number of elements in the array ");
+n=sc.nextInt();
+int arr[]=new int[n];
+System.out.println("Enter all the elements to insert into array ");
+for(int i=0;i<n;i++)
+{
+arr[i]=sc.nextInt();
+}
+obj.GetSorted(obj.setArr(arr));
+        obj.display();
+}
+}
+
+4.)
+package p1;
+
+import java.util.Scanner;
+import java.util.Arrays;
+
+public class RemoveDuplicates {
+   private int arr[];
+ 
+public int[] getArr() {
+return arr;
+}
+
+public int[] setArr(int[] arr) {
+this.arr = arr;
+return arr;
+}
+
+public int[] ModifyArray(int arr[])
+{
+Arrays.sort(arr);
+int j=0; int[] temp=new int[arr.length]; int count=0;
+int n=arr.length;
+for(int i=0;i<n-1;i++)
+{
+if(arr[i]!=arr[i+1])
+{
+temp[j++]=arr[i];
+}
+}
+temp[j++]=arr[n-1];
+for(int i=j-1;i>=0;i--)
+{
+System.out.println(temp[i]);
+}
+return arr;
+}
+public static void main(String[] args) {
+int n;
+RemoveDuplicates obj = new RemoveDuplicates();
+Scanner sc = new Scanner(System.in);
+System.out.println("Enter the number of elements in the array");
+n=sc.nextInt();
+int arr[]= new int[n];
+System.out.println("Enter all the elements in the array");
+for(int i=0;i<n;i++)
+{
+arr[i]=sc.nextInt();
+}
+       obj.ModifyArray(obj.setArr(arr));
+}
+}
