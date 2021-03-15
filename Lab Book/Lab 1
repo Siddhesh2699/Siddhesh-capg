@@ -1,0 +1,188 @@
+1)To find the sum of cubes of digits in a number
+
+package p1;
+import java.util.Scanner;
+public class SumOfCubes {
+
+public static void main(String[] args) {
+
+Scanner sc = new Scanner(System.in);
+System.out.println("Enter the Number");
+int n = sc.nextInt();
+int sum = 0,a;
+while(n!=0)
+{
+a = n%10;
+sum = sum + (a*a*a);
+n = n/10;
+}
+System.out.println("sum is " +sum);
+}
+}
+
+2)Program to simulate traffic light
+
+package p1;
+
+import java.util.Scanner;
+public class TrafficController {
+
+public static void main(String[] args) {
+System.out.println("Enter your choice:");
+Scanner sc = new Scanner(System.in);
+char x = sc.next().charAt(0);
+if (x=='r')
+System.out.println("Stop");
+else if(x=='y')
+System.out.println("Ready");
+else if(x=='g')
+System.out.println("Go");
+}
+}
+
+3) To print the nth value of fibonacci sequence
+
+package p1;
+import java.util.Scanner;
+public class Fibbinoci {
+ public static int fib(int n)
+   {
+       if (n <= 1) {
+           return n;
+       }
+       return fib(n - 1) + fib(n - 2);
+   }
+   public static void main(String[] args)
+   {
+       int n = 8;
+       System.out.println("nth Fibonacci number is " + fib(n));
+   }
+}
+
+4)To prime numbers till a given number
+
+package p1;
+import java.util.Scanner;
+public class Prime {
+
+public static void main(String[] args) {
+Scanner sc = new Scanner(System.in);
+int a = sc.nextInt();
+for(int i=2;i<=a;i++)
+   {
+       int c=0;
+       for(int j=1;j<=i;j++)
+       {
+           if(i%j==0)
+           {
+               c++;
+           }
+         }
+      if(c==2)
+      System.out.println(i);
+   }
+}
+}
+
+
+5.) divisible by 3 or 5
+
+package p1;
+import java.util.Scanner;
+public class DivisibilityBy3or5 {
+private int num;
+static int calculateSum(int num) {
+int finalSum = 0;
+for (int i = 1; i <= num; i++) {
+if (i % 3 == 0 || i % 5 == 0) {
+finalSum += i;
+}
+}
+return finalSum;
+}
+public static void main(String[] args) {
+Scanner sc = new Scanner(System.in);
+System.out.println("Enter the number:");
+int num = sc.nextInt();
+System.out.println(calculateSum(num));
+sc.close();
+}
+}
+ 
+6.) find the difference between the sum of the squares and the square of the sum of the first n natural numbers
+
+package p1;
+import java.util.Scanner;
+public class CalculateDifference {
+static int calculateDifference(int n){
+int l, k, sum;
+l = (n * (n + 1) * (2 *(n + 1))) / 6;
+k = (n * (n + 1)) / 2;
+k = k * k;
+sum = Math.abs(l - k);
+return sum;
+}
+public static void main(String s[])
+{
+Scanner sc=new Scanner(System.in);
+System.out.println("enter the value of N ");
+int n=sc.nextInt();
+System.out.println(calculateDifference(n));
+}
+}
+
+7.) check if a number is an increasing number
+
+package p1;
+import java.util.Scanner;
+public class IncreasingOrder {
+private int num;
+static boolean checkNumber(int num) {
+boolean p = false;
+while (num != 0) {
+int num1 = num % 10;
+int num2 = num % 100;
+num = num / 10;
+if (num1 >= num2) {
+p = true;
+} else {
+p = false;
+break;
+}
+}
+return p;
+}
+public static void main(String[] args) {
+Scanner sc = new Scanner(System.in);
+System.out.println("Enter the number:");
+int num = sc.nextInt();
+System.out.println(checkNumber(num));
+sc.close();
+}
+}
+
+8.) check if a number is a power of two or not
+
+package p1;
+import java.util.Scanner;
+public class PowerofTwo {
+public static void main(String[] args) {
+int number;
+System.out.println("Enter the number");
+Scanner sc=new Scanner(System.in);
+number=sc.nextInt();
+if(number==0)
+{
+System.out.println("not a power");
+}
+while(number!=1)
+{
+number=number/2;
+if(number%2!=0 && number!=1)
+{
+System.out.println("not a power");
+}
+}
+System.out.println("Is a power");
+}
+}
